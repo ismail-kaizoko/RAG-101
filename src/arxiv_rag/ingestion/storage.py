@@ -10,7 +10,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from arxiv_rag.ingestion.models import Paper
+from src.arxiv_rag.ingestion.models import Paper
 
 
 def save_papers(path: Path, papers: list[Paper]) -> None:

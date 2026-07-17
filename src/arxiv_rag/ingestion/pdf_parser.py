@@ -11,7 +11,7 @@ from __future__ import annotations
 import httpx
 import pymupdf
 
-from arxiv_rag.ingestion.models import Paper
+from src.arxiv_rag.ingestion.models import Paper
 
 
 def fetch_and_extract(paper: Paper, *, timeout: float = 30.0) -> Paper:

@@ -9,8 +9,8 @@ needs to change.
 from __future__ import annotations
 
 import arxiv
-
-from arxiv_rag.ingestion.models import Paper
+ 
+from src.arxiv_rag.ingestion.models import Paper
 
 
 class ArxivClient:
@@ -33,11 +33,11 @@ class ArxivClient:
     @staticmethod
     def _to_paper(result: arxiv.Result) -> Paper:
         return Paper(
-            arxiv_id=result.get_short_id(),
-            title=result.title.strip(),
-            authors=[a.name for a in result.authors],
-            abstract=result.summary.strip(),
-            categories=result.categories,
-            published=result.published.isoformat(),
-            pdf_url=result.pdf_url,
+            arxiv_id= result.get_short_id(),
+            title= result.title.strip(),
+            authors= [a.name for a in result.authors],
+            abstract= result.summary.strip(),
+            categories= result.categories,
+            published= result.published.isoformat(),
+            pdf_url= result.pdf_url,
         )

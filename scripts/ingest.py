@@ -8,10 +8,15 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+import sys
 
-from arxiv_rag.ingestion.client import ArxivClient
-from arxiv_rag.ingestion.pdf_parser import fetch_and_extract
-from arxiv_rag.ingestion.storage import save_papers
+sys.path.append(str(Path(__file__).resolve().parents[1]))
+
+
+from src.arxiv_rag.ingestion.client import ArxivClient
+from src.arxiv_rag.ingestion.pdf_parser import fetch_and_extract
+from src.arxiv_rag.ingestion.storage import save_papers
+
 
 DEFAULT_OUTPUT = Path("data/raw/papers.jsonl")
 
