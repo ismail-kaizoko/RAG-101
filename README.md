@@ -21,7 +21,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-- ingest docs :
+- ingest docs : (using arXiv API search by query)
 
 ```
 python scripts/ingest.py 'cat:cs.LG AND abs:LLM' --max-results 75
@@ -31,11 +31,13 @@ python scripts/ingest.py 'cat:cs.LG AND abs:LLM' --max-results 75
 # abs: searches within the abstract text for the given word
 #  au: search papers whose authors are specefied
 # all: search across all fields.
-# -> puting it all together : EX: cat:cs.CV AND abs:diffusion AND abs:image --> searchs for "image-generation papers based on diffusion"
+# -> puting it all together : query = "cat:cs.CV AND abs:diffusion AND abs:image" --> searchs for "image-generation papers based on diffusion"
 ```
 
 - chunk the docs :
 
 ```
-pyhton scripts/chunk.py
+pyhton scripts/chunk.py --method
+
+# supports to methods for now : naive chunking. OR section-aware chunking
 ```
