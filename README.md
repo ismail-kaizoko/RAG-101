@@ -13,7 +13,7 @@ pip install -r requirements.txt
 
 - [x] arXiv ingestion (search, PDF download, text extraction, JSONL storage)
 - [x] Chunking
-- [ ] Embedding + FAISS index
+- [x] Embedding + FAISS index
 - [ ] Retrieval (dense + hybrid + reranking)
 - [ ] Generation (Phi-4-mini via Ollama)
 - [ ] Evaluation

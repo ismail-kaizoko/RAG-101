@@ -1,5 +1,5 @@
 from __future__ import annotations
-from arxiv_rag.chunking.models import Chunk
+from src.arxiv_rag.chunking.models import Chunk
 
 def build_embedding_text(chunk: Chunk, *, use_context: bool = True) -> str:
     if use_context and chunk.section_title:
