@@ -6,3 +6,7 @@ pytest>=8.0
 faiss-cpu
 sentence-transformers
 numpy
+transformers
+torch
+bitsandbytes
+anthropic
