@@ -8,3 +8,5 @@ class Chunk(BaseModel):
     text: str
     method: str
     section_title: str | None = None
+    paper_title: str
+    paper_authors : list[str]

@@ -4,7 +4,7 @@
 from __future__ import annotations
 from src.arxiv_rag.chunking.models import Chunk
 
-def chunk_fixed_size(text, paper_id, *, chunk_size=300, overlap=40):
+def chunk_fixed_size(text, paper_id, paper_title, paper_authors, *, chunk_size=300, overlap=40):
     words = text.split()
     stride = chunk_size - overlap
     if stride <= 0:
@@ -21,6 +21,8 @@ def chunk_fixed_size(text, paper_id, *, chunk_size=300, overlap=40):
             chunk_index=i,
             text=" ".join(window),
             method="fixed",
+            paper_title=paper_title,
+            paper_authors=paper_authors
         ))
         if start + chunk_size >= len(words):
             break

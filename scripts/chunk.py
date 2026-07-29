@@ -22,7 +22,7 @@ def main():
     papers = load_papers(INPUT_PATH)
     fixed_chunks, structured_chunks = [], []
     for paper in papers:
-        fixed_chunks.extend(chunk_fixed_size(paper.full_text, paper.arxiv_id))
+        fixed_chunks.extend(chunk_fixed_size(paper.full_text, paper.arxiv_id, paper.title, paper.authors))
         structured_chunks.extend(chunk_by_structure(paper.full_text, paper.arxiv_id))
 
     save_chunks(FIXED_OUTPUT, fixed_chunks)
