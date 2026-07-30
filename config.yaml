@@ -1,0 +1,40 @@
+corpus:
+  arxiv_query: "cat:cs.LG AND abs:diffusion"
+  max_results: 75
+  raw_papers_path: "data/raw/papers.jsonl"
+
+chunking:
+  method: "structured"     # which method the generation pipeline reads from
+  fixed:
+    chunk_size: 300
+    overlap: 40
+  output_dir: "data/processed"
+
+embedding:
+  model_name: "BAAI/bge-base-en-v1.5"
+  use_context: true
+  index_dir: "data/index"
+
+retrieval:
+  top_k: 5
+  candidate_k: 20
+  rrf_k: 60
+
+reranker:
+  enabled: true
+  model_name: "BAAI/bge-reranker-base"
+  min_free_vram_mb: 1500
+
+generation:
+  backend: "ollama"         # "ollama", "local", or "api"
+  max_tokens: 512
+  ollama:
+    model: "phi4-mini"
+    host: "http://localhost:11434"
+  local:
+    model_name: "microsoft/Phi-4-mini-instruct"
+  api:
+    model: "claude-sonnet-5"
+
+logging:
+  level: "INFO"
